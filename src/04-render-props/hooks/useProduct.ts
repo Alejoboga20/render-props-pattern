@@ -7,9 +7,13 @@ export const useProduct = ({ product, onChange, value = 0, initialValues }: useP
 	const isMounted = useRef(false);
 
 	const increaseBy = (value: number) => {
-		const newValue = Math.max(counter + value, 0);
-		setCounter(newValue);
+		let newValue = Math.max(counter + value, 0);
 
+		if (initialValues?.maxCount) {
+			newValue = Math.min(newValue, initialValues.maxCount);
+		}
+
+		setCounter(newValue);
 		onChange && onChange({ product, counter: newValue });
 	};
 
