@@ -16,9 +16,13 @@ export const ShoppingPage = () => {
 				className='bg-dark text-white'
 				initialValues={{ count: 5, maxCount: 10 }}
 			>
-				<ProductImage className='custom-image' />
-				<ProductTitle className='text-bold' />
-				<ProductButtons className='custom-buttons' />
+				{() => (
+					<>
+						<ProductImage className='custom-image' />
+						<ProductTitle className='text-bold' />
+						<ProductButtons className='custom-buttons' />
+					</>
+				)}
 			</ProductCard>
 		</div>
 	);

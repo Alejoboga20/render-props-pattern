@@ -1,4 +1,4 @@
-import { createContext, CSSProperties, ReactElement } from 'react';
+import { createContext, CSSProperties } from 'react';
 import {
 	Product,
 	ProductContextProps,
@@ -26,14 +26,15 @@ export const ProductCard = ({
 	return (
 		<Provider value={{ counter, increaseBy, product }}>
 			<div className={`${styles.productCard} ${className}`} style={style}>
-				{children}
+				{children()}
 			</div>
 		</Provider>
 	);
 };
 
 export interface ProductCardProps {
-	children?: ReactElement | ReactElement[];
+	//children?: ReactElement | ReactElement[];
+	children: () => JSX.Element;
 	className?: string;
 	onChange?: (args: onChangeArgs) => void;
 	product: Product;
