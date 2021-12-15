@@ -26,3 +26,8 @@ export interface onChangeArgs {
 	product: Product;
 	counter: number;
 }
+
+export interface InitialValues {
+	count?: number;
+	maxCount?: number;
+}
