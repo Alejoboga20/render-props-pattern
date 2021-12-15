@@ -5,8 +5,10 @@ import { ProductTitleProps } from '../components/ProductTitle';
 
 export interface ProductContextProps {
 	counter: number;
-	increaseBy: (value: number) => void;
+	maxCount?: number;
 	product: Product;
+
+	increaseBy: (value: number) => void;
 }
 
 export interface ProductCardHOCProps {

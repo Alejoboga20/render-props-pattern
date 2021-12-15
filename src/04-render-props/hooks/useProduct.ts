@@ -30,6 +30,7 @@ export const useProduct = ({ product, onChange, value = 0, initialValues }: useP
 	return {
 		counter,
 		increaseBy,
+		maxCount: initialValues?.maxCount,
 	};
 };
 
